@@ -1,0 +1,59 @@
+
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../genome-pager/genome-pager.html">
+
+<polymer-element name="bootstrap-pager" extends="genome-pager">
+    <template>
+        <style>
+            :host {
+                display: block;
+            }
+        </style>
+
+        <ul class="pagination">
+
+            
+
+            <template if="{{ before.length }}">
+                <li><a href on-click="{{ first }}">&laquo;&laquo;</a></li>
+                <li><a href on-click="{{ prev }}">&laquo;</a></li>
+            </template>
+
+            <template if="{{ !rotate && left > 1 }}">
+                <li><a data-page="{{  left - 1 }}" on-click="{{ go }}">...</a></li>
+            </template>
+
+            <template repeat="{{  page in before }}">
+                <li><a  page="{{ page }}" on-click="{{ go }}">{{ page }}</a></li>                
+            </template>
+
+            <li class="active"><a>{{ current }} <span class="sr-only">(current)</span></a></li>
+
+            <template repeat="{{ page in after }}">
+                <li><a  data-page="{{ page }}" on-click="{{ go }}">{{ page }}</a></li>                
+            </template>
+
+
+            <template if="{{ !rotate && right < lastpage }}">
+                <li><a data-page="{{  right + 1 }}" on-click="{{ go }}">...</a></li>
+            </template>
+
+
+
+            <template if="{{ after.length }}">            
+                <li><a href on-click="{{ next }}">&raquo;</a></li>
+                <li><a href on-click="{{ last }}">&raquo;&raquo;</a></li>
+            </template>
+
+        </ul>
+    </template>
+    <script>
+        Polymer('bootstrap-pager', {
+            ready : function  () {
+                this.super();
+            }
+
+
+        });
+    </script>
+</polymer-element>   

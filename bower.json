@@ -1,0 +1,24 @@
+{
+  "name": "bootstrap-pager",
+  "version": "0.0.1",
+  "authors": [
+    "Popov Gena <commerce@westtrade.tk>"
+  ],
+  "description": "Bootstrap pager for Polymer. Based on genome-pager.",
+  "main": "bootstrap-pager.html",
+  "keywords": [
+    "polymer",
+    "genome",
+    "bootsrap",
+    "pager"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/CryptexDHT/bootstrap-pager",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
